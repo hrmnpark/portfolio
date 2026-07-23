@@ -39,7 +39,7 @@ export const projects: Project[] = [
     gradient:
       'radial-gradient(120% 120% at 80% 0%, #2A1B4A 0%, #1E1140 55%, #140B2E 100%)',
     imageOnLeft: false,
-    prototype: true,
+    prototype: false,
   },
   {
     slug: 'table-booking',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
     gradient:
       'radial-gradient(120% 120% at 20% 0%, #E9F6FF 0%, #E7ECFF 55%, #F0F4FF 100%)',
     imageOnLeft: true,
-    prototype: true,
+    prototype: false,
   },
   {
     slug: 'marketplace',
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     gradient:
       'radial-gradient(120% 120% at 20% 0%, #EEF1FF 0%, #E7ECFF 55%, #F6ECFF 100%)',
     imageOnLeft: true,
-    prototype: true,
+    prototype: false,
   },
   {
     slug: 'alfa-forest',
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     gradient:
       'radial-gradient(120% 120% at 80% 0%, #123A2A 0%, #0E2A22 55%, #0A1F1C 100%)',
     imageOnLeft: false,
-    prototype: true,
+    prototype: false,
   },
   {
     slug: 'it-core',
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     gradient:
       'radial-gradient(120% 120% at 20% 0%, #FFE9F4 0%, #FDE7FF 55%, #F0ECFF 100%)',
     imageOnLeft: true,
-    prototype: true,
+    prototype: false,
   },
   {
     slug: 'space-arkanoid',
@@ -123,6 +123,6 @@ export const projects: Project[] = [
     gradient:
       'radial-gradient(120% 120% at 80% 0%, #101A3E 0%, #0B1230 55%, #070A22 100%)',
     imageOnLeft: false,
-    prototype: true,
+    prototype: false,
   },
 ];
