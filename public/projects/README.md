@@ -1,7 +1,8 @@
 # Мокапы проектов
 
-Сюда нужно положить экспортированные из Figma изображения мокапов (PNG).
-Имена файлов должны совпадать с путями в `lib/projects.ts`:
+Реальные мокапы, экспортированные из Figma (файл `VvV9eahreQ33LEe3nV9cPW`, нода `601:9`).
+Имена файлов совпадают с путями `image` в `lib/projects.ts` и подставляются в карточки
+через `<img className="card__media">` в `components/ProjectCard.tsx`.
 
 - finance-kids.png       — Приложение, обучающее детей финансам
 - restaurant-crm.png     — CRM-система для ресторанов
@@ -14,6 +15,5 @@
 
 Аватар для hero (по желанию): положи `public/avatar.png` и раскомментируй <img> в `components/Hero.tsx`.
 
-## Как включить картинку вместо плейсхолдера
-В `components/ProjectCard.tsx` раскомментируй строку с `<img className="card__media" ... />`
-и удали блок `<div className="card__placeholder">`.
+## Как обновить мокап
+Перезалей экспорт из Figma в файл с тем же именем — карточка подхватит его автоматически.
