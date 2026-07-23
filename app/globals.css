@@ -350,31 +350,189 @@ img {
   filter: drop-shadow(0 30px 60px rgba(30, 12, 50, 0.18));
 }
 
-.card__placeholder {
-  width: min(80%, 460px);
-  aspect-ratio: 4 / 3;
-  border-radius: 28px;
+/* decorative soft blobs behind the mockups */
+.card__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(38px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+.card__blob--1 {
+  width: 320px;
+  height: 320px;
+  top: -60px;
+  left: -40px;
+  background: radial-gradient(circle, rgba(123, 92, 255, 0.7), transparent 70%);
+}
+.card__blob--2 {
+  width: 260px;
+  height: 260px;
+  bottom: -50px;
+  right: -30px;
+  background: radial-gradient(circle, rgba(58, 184, 255, 0.55), transparent 70%);
+}
+.card--dark .card__blob--1 {
+  background: radial-gradient(circle, rgba(123, 92, 255, 0.55), transparent 70%);
+  opacity: 0.5;
+}
+.card--dark .card__blob--2 {
+  background: radial-gradient(circle, rgba(176, 98, 255, 0.45), transparent 70%);
+  opacity: 0.5;
+}
+
+/* ---------- CSS device mockups ---------- */
+.mock {
+  position: relative;
+  z-index: 1;
+}
+
+.mock__ui {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.mock__bar {
+  height: 14%;
+  min-height: 14px;
+  background: rgba(255, 255, 255, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.mock__grid {
+  flex: 1;
   display: grid;
-  place-items: center;
-  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  color: rgba(30, 12, 50, 0.5);
-  border: 2px dashed rgba(30, 12, 50, 0.22);
-  background: rgba(255, 255, 255, 0.35);
-  font-size: 13px;
-  padding: 24px;
+  padding: 12px;
+}
+.mock__grid i {
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 8px;
+}
+.mock__rows {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+}
+.mock__rows i {
+  height: 26px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.mock__pill {
+  height: 40%;
+  margin: 16px 14px 8px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.32);
+}
+.mock__pill--sm {
+  height: 18%;
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.24);
+}
+.mock__notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(12, 8, 26, 0.85);
+  z-index: 3;
 }
 
-.card--dark .card__placeholder {
-  color: rgba(255, 255, 255, 0.65);
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.06);
+/* phone */
+.mock--phone {
+  width: clamp(180px, 20vw, 260px);
+  aspect-ratio: 9 / 19;
+  border-radius: 34px;
+  padding: 10px;
+  background: linear-gradient(160deg, #2a2340, #14101f);
+  box-shadow:
+    0 30px 60px rgba(30, 12, 50, 0.28),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+.mock--phone .mock__ui {
+  border-radius: 26px;
 }
 
-.card__placeholder strong {
-  font-family: var(--font-display), sans-serif;
-  font-size: 15px;
-  color: inherit;
+/* two overlapping phones */
+.mock--phones {
+  width: min(90%, 460px);
+  height: clamp(320px, 34vw, 460px);
+}
+.mock--phones .mock--phone {
+  position: absolute;
+}
+.mock--phone-back {
+  left: 8%;
+  top: 14%;
+  transform: rotate(-9deg) scale(0.92);
+  opacity: 0.92;
+}
+.mock--phone-front {
+  right: 6%;
+  top: 2%;
+  transform: rotate(6deg);
+}
+
+/* tablet */
+.mock--tablet {
+  width: min(88%, 520px);
+  aspect-ratio: 4 / 3;
+  border-radius: 26px;
+  padding: 14px;
+  background: linear-gradient(160deg, #2a2340, #14101f);
+  box-shadow:
+    0 30px 60px rgba(30, 12, 50, 0.3),
+    inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+.mock--tablet .mock__ui {
+  border-radius: 14px;
+}
+
+/* laptop */
+.mock--laptop {
+  width: min(92%, 560px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mock__laptop-screen {
+  width: 82%;
+  aspect-ratio: 16 / 10;
+  border-radius: 14px 14px 0 0;
+  padding: 10px;
+  background: linear-gradient(160deg, #2a2340, #14101f);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+.mock__laptop-screen .mock__ui {
+  border-radius: 6px;
+}
+.mock__laptop-base {
+  width: 100%;
+  height: 16px;
+  border-radius: 0 0 14px 14px;
+  background: linear-gradient(180deg, #3a3352, #1c1730);
+  box-shadow: 0 26px 46px rgba(30, 12, 50, 0.32);
+  position: relative;
+}
+.mock__laptop-base::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16%;
+  height: 5px;
+  border-radius: 0 0 8px 8px;
+  background: rgba(255, 255, 255, 0.14);
 }
 
 /* ---------- Contact ---------- */

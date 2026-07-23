@@ -1,4 +1,5 @@
 import type { Project } from '@/lib/projects';
+import DeviceMock from './DeviceMock';
 
 export default function ProjectCard({ project }: { project: Project }) {
   const {
@@ -8,8 +9,9 @@ export default function ProjectCard({ project }: { project: Project }) {
     gradient,
     theme,
     imageOnLeft,
-    image,
     imageAlt,
+    device,
+    screen,
     prototype,
   } = project;
 
@@ -22,12 +24,13 @@ export default function ProjectCard({ project }: { project: Project }) {
       ].join(' ')}
     >
       <div className="card__panel" style={{ background: gradient }}>
+        <span className="card__blob card__blob--1" aria-hidden />
+        <span className="card__blob card__blob--2" aria-hidden />
         {/* Экспортированный мокап кладётся в public по пути project.image.
-            Пока файла нет — показываем аккуратный плейсхолдер. */}
-        <div className="card__placeholder">
-          <strong>{title}</strong>
-          <span>{imageAlt}</span>
-        </div>
+            Пока файла нет — показываем CSS-мокап устройства.
+            Чтобы включить реальную картинку — раскомментируй <img> ниже
+            и удали <DeviceMock />. */}
+        <DeviceMock device={device} screen={screen} label={imageAlt} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {/* <img className="card__media" src={image} alt={imageAlt} /> */}
       </div>

@@ -1,3 +1,5 @@
+export type Device = 'phone' | 'phones' | 'tablet' | 'laptop';
+
 export type Project = {
   slug: string;
   title: string;
@@ -8,6 +10,8 @@ export type Project = {
   imageAlt: string;
   theme: 'light' | 'dark';
   gradient: string; // CSS background for the visual panel
+  device: Device; // CSS mockup shown until a real export is dropped in
+  screen: string; // gradient painted on the device screen
   imageOnLeft: boolean;
   prototype?: boolean; // show the "Смотреть прототип" link
 };
@@ -24,6 +28,8 @@ export const projects: Project[] = [
     theme: 'light',
     gradient:
       'radial-gradient(120% 120% at 20% 0%, #EFE7FF 0%, #E7ECFF 45%, #F4ECFF 100%)',
+    device: 'phones',
+    screen: 'linear-gradient(160deg, #7C5CFF 0%, #3AB8FF 100%)',
     imageOnLeft: true,
     prototype: true,
   },
@@ -38,6 +44,8 @@ export const projects: Project[] = [
     theme: 'dark',
     gradient:
       'radial-gradient(120% 120% at 80% 0%, #2A1B4A 0%, #1E1140 55%, #140B2E 100%)',
+    device: 'tablet',
+    screen: 'linear-gradient(150deg, #4A3AFF 0%, #7C5CFF 60%, #2A1B6A 100%)',
     imageOnLeft: false,
     prototype: true,
   },
@@ -52,6 +60,8 @@ export const projects: Project[] = [
     theme: 'light',
     gradient:
       'radial-gradient(120% 120% at 20% 0%, #E9F6FF 0%, #E7ECFF 55%, #F0F4FF 100%)',
+    device: 'phone',
+    screen: 'linear-gradient(160deg, #00BBFA 0%, #4A3AFF 100%)',
     imageOnLeft: true,
     prototype: true,
   },
@@ -66,6 +76,8 @@ export const projects: Project[] = [
     theme: 'light',
     gradient:
       'radial-gradient(120% 120% at 80% 0%, #FFF3E6 0%, #FFECEF 55%, #FDF3FF 100%)',
+    device: 'laptop',
+    screen: 'linear-gradient(150deg, #FF9E7A 0%, #B062FF 100%)',
     imageOnLeft: false,
     prototype: true,
   },
@@ -80,6 +92,8 @@ export const projects: Project[] = [
     theme: 'light',
     gradient:
       'radial-gradient(120% 120% at 20% 0%, #EEF1FF 0%, #E7ECFF 55%, #F6ECFF 100%)',
+    device: 'laptop',
+    screen: 'linear-gradient(150deg, #6C5CE7 0%, #9B93FF 100%)',
     imageOnLeft: true,
     prototype: true,
   },
@@ -94,6 +108,8 @@ export const projects: Project[] = [
     theme: 'dark',
     gradient:
       'radial-gradient(120% 120% at 80% 0%, #123A2A 0%, #0E2A22 55%, #0A1F1C 100%)',
+    device: 'phone',
+    screen: 'linear-gradient(160deg, #2ECC71 0%, #0E9E6E 100%)',
     imageOnLeft: false,
     prototype: true,
   },
@@ -108,6 +124,8 @@ export const projects: Project[] = [
     theme: 'light',
     gradient:
       'radial-gradient(120% 120% at 20% 0%, #FFE9F4 0%, #FDE7FF 55%, #F0ECFF 100%)',
+    device: 'phone',
+    screen: 'linear-gradient(160deg, #FF6FB5 0%, #B062FF 100%)',
     imageOnLeft: true,
     prototype: true,
   },
@@ -122,6 +140,9 @@ export const projects: Project[] = [
     theme: 'dark',
     gradient:
       'radial-gradient(120% 120% at 80% 0%, #101A3E 0%, #0B1230 55%, #070A22 100%)',
+    device: 'phone',
+    screen:
+      'radial-gradient(80% 60% at 50% 15%, #3A2E8C 0%, #141A4A 55%, #070A22 100%)',
     imageOnLeft: false,
     prototype: true,
   },
